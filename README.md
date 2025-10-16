@@ -71,7 +71,7 @@ Este projeto foi construído com um conjunto robusto de funcionalidades, incluin
 #### Limite de GIFs Atingido
 *Mensagem de erro específica exibida quando o usuário atinge o limite mensal do seu plano.*
 
-![Página de Planos](DocsImages/Limite_Gifs.png)
+![Página de Planos](DocsImages/Limite_gifs.png)
 
 ---
 
