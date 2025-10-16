@@ -160,5 +160,3 @@ Siga os passos abaixo para rodar o projeto localmente.
     O frontend estará acessível em `http://localhost:5173`.
 
 ---
-
-Parabéns pela conclusão do projeto!
