@@ -1,0 +1,78 @@
+/* src/components/layout/Header.css */
+
+.main-header {
+  background-color: var(--surface);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem; /* 24px */
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* 24px */
+}
+
+.main-nav a,
+.nav-button {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  color: var(--primary);
+}
+/* O container do logo (o link <a>) agora é um flex container */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* O estilo para a imagem (filha de .logo) continua o mesmo */
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Estilo para o texto (filho de .logo) */
+.logo span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

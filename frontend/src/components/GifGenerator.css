@@ -1,0 +1,133 @@
+/* src/components/GifGenerator.css */
+
+/* --- Card Principal --- */
+.image-generator-card {
+  background-color: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.image-generator-card h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+}
+
+/* --- Formulário --- */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.form-group textarea {
+  font-size: 1rem;
+  padding: 0.8rem;
+  margin: 0;
+  min-height: 100px;
+}
+
+/* --- Botão de Envio --- */
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* --- Preview da Imagem Gerada --- */
+.gif-preview {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.gif-preview h3 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gif-preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  background-color: #f0f0f0; /* Fundo para caso a imagem demore a carregar */
+}
+
+.image-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* --- Avisos --- */
+.upgrade-prompt {
+  text-align: center;
+  padding: 2rem;
+}
+
+.upgrade-prompt h2 {
+  margin-bottom: 1rem;
+}
+
+.upgrade-prompt p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: var(--error);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  border: 1px solid var(--error);
+  text-align: center;
+}
+
+.image-preview {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.image-preview h3 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove pequenos espaços em branco abaixo da imagem */
+  margin: 0 auto; /* Garante a centralização */
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.image-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

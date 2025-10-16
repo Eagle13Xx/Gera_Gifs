@@ -1,0 +1,95 @@
+/* Container principal, agora uma lista vertical */
+.gif-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaçamento entre os cards */
+}
+
+.gif-history-card {
+  display: flex;
+  gap: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Container da imagem*/
+.gif-image-container {
+  flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+.gif-history-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Container dos detalhes*/
+.gif-history-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Faz esta coluna ocupar o espaço restante */
+}
+
+.gif-history-details p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Estilização específica para a seção do prompt */
+.prompt-details {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.prompt-details h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.prompt-details p {
+  font-style: italic;
+  color: #6c757d;
+  margin: 0;
+}
+
+.download-btn {
+  margin-top: auto; /* Empurra o botão para o final do card */
+  align-self: flex-start; /* Alinha o botão à esquerda */
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/* Mensagem para quando não há GIFs */
+.gif-history-empty {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .gif-history-card {
+    flex-direction: column; /* Coloca a imagem em cima dos detalhes */
+  }
+
+  .gif-history-image {
+    width: 100%; /* Imagem ocupa a largura total */
+    height: auto; /* Altura se ajusta */
+  }
+
+  .download-btn {
+    align-self: stretch; /* Botão ocupa a largura toda */
+    text-align: center;
+  }
+}

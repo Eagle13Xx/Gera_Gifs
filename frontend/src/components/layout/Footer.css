@@ -1,0 +1,45 @@
+/* src/components/layout/Footer.css */
+
+.main-footer {
+  background-color: #333;
+  color: #f4f4f4;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  margin-top: auto; /* Empurra o rodapé para o fim da página */
+  font-size: 0.9rem; /* 14.4px */
+}
+
+.main-footer p {
+  margin: 0.25rem 0;
+}
+.app-footer {
+  background-color: #f8f9fa; /* Um cinza bem claro */
+  border-top: 1px solid #e7e7e7;
+  padding: 20px;
+  margin-top: auto; /* Empurra o rodapé para o final da página */
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  display: flex;
+  justify-content: space-between; /* Alinha itens nas extremidades */
+  align-items: center; /* Centraliza verticalmente */
+  flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+  gap: 15px; /* Espaçamento entre os itens */
+}
+
+.footer-content p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Estilo para telas menores (celulares) */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Coloca os itens um embaixo do outro */
+    justify-content: center;
+  }
+}

@@ -1,0 +1,83 @@
+/* src/pages/LoginPage.css */
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Faz ocupar o espaço vertical disponível */
+  padding: 2rem;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 450px; /* Largura máxima do card de formulário */
+  background-color: var(--surface);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-header {
+  margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem; /* 14.4px */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.form-group input {
+  font-size: 1rem; /* 16px */
+  padding: 0.8rem;
+  margin: 0;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem; /* 17.6px */
+  margin-top: 1rem;
+}
+
+.auth-toggle {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.auth-toggle p {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.field-error {
+  color: #dc3545; /* Um tom de vermelho padrão para erros */
+  font-size: 0.875rem; /* Um pouco menor que o texto normal */
+  margin-top: 5px; /* Pequeno espaçamento acima da mensagem */
+  font-weight: 500; /* Levemente em negrito para dar destaque */
+}
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  text-align: center;
+}

@@ -1,0 +1,173 @@
+/* src/pages/ProfilePage.css */
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Estilização das Abas */
+.profile-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+}
+
+.tab-button:hover {
+  color: var(--text-primary);
+}
+
+.tab-button.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Conteúdo da Aba */
+.tab-content {
+  padding-top: 1rem;
+}
+
+/* Card de Status do Plano */
+.plan-status-card {
+  background-color: #f9f9f9;
+  border-left: 5px solid var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+.plan-status-card h2 {
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 0.5rem;
+}
+
+.plan-status-card p {
+  font-size: 1.1rem; /* 17.6px */
+  margin-bottom: 1.5rem;
+}
+
+/* "Pílula" de Status */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem; /* 14.4px */
+  color: white;
+}
+
+.status-badge.inactive {
+  background-color: var(--text-secondary);
+}
+
+.status-badge.active {
+  background-color: var(--success);
+}
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem; /* 14.4px */
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.status-badge.inactive {
+  background-color: var(--text-secondary);
+}
+
+.status-badge.active {
+  background-color: var(--success);
+}
+
+
+.status-badge.canceled {
+  background-color: var(--warning);
+}
+
+/* Mensagens de feedback */
+.success-message {
+  background-color: #e6ffe6; /* Verde claro */
+  color: var(--success);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid var(--success);
+  text-align: center;
+}
+
+
+.btn-danger {
+  background-color: var(--error);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #d32f2f;
+}
+
+.btn-danger:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
+.active-subscription-message {
+  background-color: var(--info-light);
+  color: var(--info-dark);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 1px solid var(--info-dark);
+}
+
+.active-subscription-message p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+
+.plan-card.plan-card-active {
+  border: 2px solid var(--primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+.btn-tertiary {
+  background-color: var(--background-light);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: default;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-tertiary:disabled {
+  opacity: 1;
+  cursor: default;
+}

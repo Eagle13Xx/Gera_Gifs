@@ -1,0 +1,196 @@
+/* src/index.css */
+
+/* Paleta de Cores e Variáveis de Acessibilidade */
+:root {
+  --primary: #2E7D32; /* Verde escuro acessível */
+  --primary-light: #4CAF50;
+  --secondary: #FF9800; /* Laranja para contrastes */
+  --background: #F5F5F5;
+  --surface: #FFFFFF;
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --error: #D32F2F;
+  --success: #388E3C;
+  --border-color: #e0e0e0;
+}
+
+/* Estilos Globais e Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Estilos de Botões Acessíveis */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 48px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-large {
+  padding: 15px 30px;
+  font-size: 20px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+button:disabled, .btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  border-color: #ccc;
+  color: #666;
+}
+
+/* Estilos de Formulário */
+input, textarea, select {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 18px;
+}
+textarea {
+  resize: vertical;
+}
+
+/* Navegação por Abas (Profile) */
+.profile-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+.tab-button {
+  flex: 1;
+  padding: 1rem;
+  background: none;
+  border: none;
+  border-bottom: 4px solid transparent;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.tab-button.active {
+  border-bottom-color: var(--primary);
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Página de Planos */
+.plans-page { text-align: center; }
+.plans-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.plan-card {
+  background-color: var(--surface);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.plan-card.popular {
+  border-color: var(--primary);
+  border-width: 3px;
+}
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.plan-card h3 { font-size: 24px; margin-bottom: 1rem; }
+.plan-price { font-size: 36px; font-weight: bold; margin-bottom: 1rem; }
+.plan-features { list-style: none; margin-bottom: 2rem; }
+.plan-features li { margin-bottom: 0.5rem; }
+
+/* Gerador de GIF */
+.gif-generator { padding: 2rem; background: var(--surface); border-radius: 10px; }
+.generator-container { display: flex; gap: 2rem; }
+.controls-panel, .preview-panel { flex: 1; }
+.time-buttons { display: flex; gap: 1rem; margin-bottom: 1rem; }
+.time-button { flex: 1; font-size: 18px; padding: 1rem; border: 2px solid var(--border-color); background: none; border-radius: 8px; cursor: pointer; }
+.time-button.active { background-color: var(--primary-light); color: white; border-color: var(--primary); }
+.char-count { text-align: right; font-size: 14px; color: var(--text-secondary); }
+.preview-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-content { padding: 1rem; }
+  .profile-tabs, .generator-container { flex-direction: column; }
+  .tab-button { font-size: 16px; }
+}

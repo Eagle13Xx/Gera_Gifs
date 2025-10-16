@@ -1,0 +1,48 @@
+# Arquivos de Cache e Compilados do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambiente Virtual do Python
+# Ignora a pasta do ambiente virtual, não importa o nome que você deu a ela.
+.venv/
+venv/
+env/
+
+# Arquivos de Banco de Dados
+# Ignora o banco de dados SQLite de desenvolvimento.
+db.sqlite3
+*.sqlite3
+
+# Arquivos de Mídia e Estáticos Gerados
+# Ignora a pasta onde os GIFs gerados e os vídeos temporários são salvos.
+/media/
+/static_root/
+
+# Arquivos de Configuração Sensíveis
+# Ignora o arquivo .env que contém suas chaves de API secretas.
+.env
+
+# Dependências do Frontend (Node.js)
+# Ignora a pasta que contém milhões de arquivos de pacotes.
+frontend/node_modules/
+
+# Arquivos de Build e de Cache do Frontend (Vite/React)
+# Ignora a pasta de build de produção e outros arquivos de cache.
+frontend/dist/
+frontend/.vite/
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Arquivos de Configuração de Editores de Código
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
