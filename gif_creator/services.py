@@ -1,23 +1,20 @@
-# gif_creator/services.py
 from gif_creator.models import GeneratedGif
 import os
 import uuid
 import base64
 import requests
-import time  # <-- Importa a biblioteca 'time' para fazer pausas
+import time 
 from io import BytesIO
 from django.conf import settings
 from PIL import Image, ImageDraw, ImageFont
 from moviepy import VideoFileClip
 import google.generativeai as genai
 
-# URLs da API do Runway (baseadas na nova documentação)
 RUNWAY_API_BASE_URL = "https://api.dev.runwayml.com/v1"
 CLIPDROP_API_URL = "https://clipdrop-api.co/text-to-image/v1"
 
 
 class AnimationService:
-    # A linha duplicada 'class AnimationService:' foi REMOVIDA daqui
 
     def __init__(self, user, prompt, overlay_text=''):
         """
@@ -46,8 +43,7 @@ class AnimationService:
         try:
             genai.configure(api_key=settings.GEMINI_API_KEY)
 
-            # ✅ CORRECTION: Use the updated model name
-            model = genai.GenerativeModel('gemini-2.5-pro')  # Or try 'gemini-1.0-pro' if this fails
+            model = genai.GenerativeModel('gemini-2.5-pro')  
 
             meta_prompt = (
                 "Aprimore o seguinte prompt de usuário para gerar uma imagem mais detalhada, "
@@ -61,11 +57,9 @@ class AnimationService:
             )
 
             response = model.generate_content(meta_prompt)
-            # Add safety check for response content
             if response.parts:
                 enhanced_prompt_from_gemini = response.text.strip()
             else:
-                # Handle cases where the response might be blocked or empty
                 print("!!! Resposta do Gemini vazia ou bloqueada. Usando prompt original. !!!")
                 enhanced_prompt_from_gemini = original_prompt
 
@@ -77,12 +71,8 @@ class AnimationService:
 
         final_prompt_for_clipdrop =  enhanced_prompt_from_gemini
 
-        # --- Assign Final Values ---
         self.prompt = final_prompt_for_clipdrop
         self.overlay_text = overlay_text.strip().strip('"\'')
-
-        # --- File Path Configurations ---
-        # ... (font_path, output_filename, output_path) ...
         self.font_path = os.path.join(settings.BASE_DIR, 'static', 'fonts', 'fonte.ttf')
         self.output_filename = f"{uuid.uuid4()}.gif"
         self.output_path = os.path.join(settings.MEDIA_ROOT, 'ai_gifs', self.output_filename)
@@ -106,7 +96,6 @@ class AnimationService:
 
         if self.overlay_text:
             if self.overlay_text:
-                # Now this line will work correctly
                 draw = ImageDraw.Draw(image)
                 font_size = int(image.width / 12)
                 try:
@@ -159,7 +148,6 @@ class AnimationService:
             raise Exception(f"Erro ao iniciar a tarefa no Runway: {start_response.text}")
 
         response_json = start_response.json()
-        # --- CORREÇÃO APLICADA AQUI ---
         task_id = response_json['id']
         # --------------------------------
 
@@ -196,10 +184,7 @@ class AnimationService:
         # 1. Redimensiona o vídeo para uma largura máxima de 480 pixels, mantendo a proporção.
         final_clip = clip.resized(width=480)
 
-        # 2. Define uma taxa de quadros (FPS) um pouco menor. 12 FPS é um bom equilíbrio
-        #    entre fluidez e tamanho do arquivo para GIFs.
         target_fps = 12
-        # --- FIM DAS ETAPAS DE COMPRESSÃO ---
 
         print("--- Etapa 6: Convertendo vídeo otimizado para GIF... ---")
         os.makedirs(os.path.dirname(self.output_path), exist_ok=True)
