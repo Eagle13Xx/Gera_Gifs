@@ -152,7 +152,8 @@ ASAAS_WEBHOOK_SECRET = os.getenv('ASAAS_WEBHOOK_SECRET')
 HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_KEY')
 RUNWAY_API_KEY = os.getenv('RUNWAY_API_KEY')
 FRONTEND_URL = 'http://localhost:5173'
-
+CLIPDROP_API_KEY = os.getenv('CLIPDROP_API_KEY')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
